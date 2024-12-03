@@ -47,3 +47,15 @@ The fact that we were redirected to 4040 prompted me to run another nmap scan of
 nmap -sV -p- $ip -oN nmap2.txt
 ```
 I also think that Barney was refering to the 9009 port for pichat. The first nmap scan looks like maybe it's ment to be a shell, based on the graphics and strange appearance. Let's try to connect to it via netcat:
+
+![9009_client](https://github.com/user-attachments/assets/f187ec3d-f6f5-499b-9be9-3857a2a8ea1b)
+
+At first I tried the id command but it says this is to recover your client certificate and private key. So, for the next prompt I typed client, and it provided a client key. For the next prompt I tried key and it provided a private key:
+
+![key](https://github.com/user-attachments/assets/21b59612-a54f-43ce-adeb-ba4fca11dfcc)
+
+We still don't really now where to connect to, so for the next prompt I typed connection:
+
+![connection](https://github.com/user-attachments/assets/a7e6a86e-7efe-4a93-a447-89cd607e9fe7)
+
+This provides us with an example of the socat stdio command that we can use to connect.
