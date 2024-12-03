@@ -50,7 +50,7 @@ I also think that Barney was refering to the 9009 port for pichat. The first nma
 
 ![9009_client](https://github.com/user-attachments/assets/f187ec3d-f6f5-499b-9be9-3857a2a8ea1b)
 
-At first I tried the id command but it says this is to recover your client certificate and private key. So, for the next prompt I typed client, and it provided a client key. For the next prompt I tried key and it provided a private key:
+At first I tried the id command but it says this is to recover your client certificate and private key. So, for the next prompt I typed client, and it provided a client key. I saved this as a file called client, For the next prompt I tried key and it provided a private key, which I saved as key:
 
 ![key](https://github.com/user-attachments/assets/21b59612-a54f-43ce-adeb-ba4fca11dfcc)
 
@@ -58,4 +58,14 @@ We still don't really now where to connect to, so for the next prompt I typed co
 
 ![connection](https://github.com/user-attachments/assets/a7e6a86e-7efe-4a93-a447-89cd607e9fe7)
 
-This provides us with an example of the socat stdio command that we can use to connect.
+This provides us with an example of the socat stdio command that we can use to connect. We can paste the command into a new terminal tab and fill in the machine ip, client cert file, and private key file:
+
+![socat1](https://github.com/user-attachments/assets/af96cda1-c938-41bf-8a93-427d1658a675)
+
+And this gave us a connection as Barney Rubble!
+
+I typed in password and it provided a password hint and user:
+
+![barney passwd](https://github.com/user-attachments/assets/03352303-2422-4e91-97d9-88453d21a19e)
+
+I tried some other inputs like hint, but it just kept returning the same message. I tried to identify this hash, and use crackstation.net but nothing seemed to work. So, I tried to ssh with that string:
