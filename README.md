@@ -38,5 +38,12 @@ Output in Normal Format: This option saves the scan results in a plain text file
 
 ![nmap](https://github.com/user-attachments/assets/e2558fcf-a2ce-4ac4-b028-8e07c5e533d1)
 
-The scan reveals some interesting ports. Let's check out the webserver on port 80. You will get the warning, so click on anvanced and accept the risk:
+The scan reveals some interesting ports. Let's check out the webserver on port 80. You will get the warning, so click on anvanced and accept the risk, the page seemed to redirect to port 4040:
 
+![webserver](https://github.com/user-attachments/assets/1fd2fb9f-366a-4d32-8534-28ecd1f420f5)
+
+The fact that we were redirected to 4040 prompted me to run another nmap scan of all the ports:
+``` bash
+nmap -sV -p- $ip -oN nmap2.txt
+```
+I also think that Barney was refering to the 9009 port for pichat. The first nmap scan looks like maybe it's ment to be a shell, based on the graphics and strange appearance. Let's try to connect to it via netcat:
