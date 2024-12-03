@@ -34,4 +34,9 @@ $ip
 Target IP: This is a placeholder for the target IP address you want to scan. In practice, replace $ip with the actual IP of the machine you are targeting.
 -oN
 
-Output in Normal Format: This option saves the scan results in a plain text file format. After -oN, specify a filename where you want to store t
+Output in Normal Format: This option saves the scan results in a plain text file format. After -oN, specify a filename where you want to store the output.
+
+![nmap](https://github.com/user-attachments/assets/e2558fcf-a2ce-4ac4-b028-8e07c5e533d1)
+
+The scan reveals some interesting ports. Let's check out the webserver on port 80. You will get the warning, so click on anvanced and accept the risk:
+
