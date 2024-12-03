@@ -68,4 +68,16 @@ I typed in password and it provided a password hint and user:
 
 ![barney passwd](https://github.com/user-attachments/assets/03352303-2422-4e91-97d9-88453d21a19e)
 
-I tried some other inputs like hint, but it just kept returning the same message. I tried to identify this hash, and use crackstation.net but nothing seemed to work. So, I tried to ssh with that string:
+I tried some other inputs like hint, but it just kept returning the same message. I tried to identify this hash, and use crackstation.net but nothing seemed to work. So, I tried to ssh as barney with that string and it works. We can cat the barney flag:
+
+![barney txt](https://github.com/user-attachments/assets/7018b019-ab32-44ac-80a9-982a463d0325)
+
+Next, let's run sudo -l:
+
+![barney_sudo-l](https://github.com/user-attachments/assets/3730260e-860c-4212-bdcf-a4b9ebfdab2f)
+
+I tried a few variations of the certutil command but this is the one that provided fred's certs:
+
+![fred,certs](https://github.com/user-attachments/assets/5efb266b-0b94-485c-ad97-2875f5a758dd)
+
+Now, let's save those certs and try to use them with the socat command from earlier. I saved fred's client cert as fred_client, and fred_key.
