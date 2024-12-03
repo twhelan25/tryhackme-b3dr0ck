@@ -81,3 +81,13 @@ I tried a few variations of the certutil command but this is the one that provid
 ![fred,certs](https://github.com/user-attachments/assets/5efb266b-0b94-485c-ad97-2875f5a758dd)
 
 Now, let's save those certs and try to use them with the socat command from earlier. I saved fred's client cert as fred_client, and fred_key.
+
+![fred_passwd](https://github.com/user-attachments/assets/73fce53c-44d6-4fb5-9813-6ccb038621ec)
+
+And now we have Fred's password. We'll use it to ssh as fred. Here we can cat the fred.txt and running sudo -l, it looks fred can run sudo to base64 and base32 encode the root flag.
+
+After some experimentation I found that the pass.txt could be cracked by base64, base64 decode, base32 decode, then base64 decode again. Here it is piped together:
+
+![crack_root](https://github.com/user-attachments/assets/c8942211-1da3-44fe-b9aa-b66bfaab22e0)
+
+The resulting hash can then be cracked at crackstation.net. Then we can use that password to with su - root. I hope you enjoyed this CTF!
